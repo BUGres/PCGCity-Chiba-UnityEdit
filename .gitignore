@@ -1,0 +1,10 @@
+/RenderPipelineRebuild/.idea
+RenderPipelineRebuild/Assembly-CSharp-Editor.csproj
+RenderPipelineRebuild/Assembly-CSharp.csproj
+/RenderPipelineRebuild/Library
+/RenderPipelineRebuild/Logs
+/RenderPipelineRebuild/obj
+RenderPipelineRebuild/RenderPipelineRebuild.sln
+/RenderPipelineRebuild/Temp
+*.csproj
+/RenderPipelineRebuild/UserSettings
