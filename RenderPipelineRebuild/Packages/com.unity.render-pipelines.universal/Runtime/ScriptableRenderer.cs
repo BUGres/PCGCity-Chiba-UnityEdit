@@ -1161,7 +1161,6 @@ namespace UnityEngine.Rendering.Universal
             using (new ProfilingScope(ProfilingSampler.Get(URPProfileId.RecordRenderGraph)))
             {
                 OnBeginRenderGraphFrame();
-
                 using (new ProfilingScope(Profiling.sortRenderPasses))
                 {
                     // Sort the render pass queue
@@ -1218,6 +1217,7 @@ namespace UnityEngine.Rendering.Universal
             {
                 foreach (ScriptableRenderPass pass in m_ActiveRenderPassQueue)
                 {
+                    // Debug.Log(pass.passName + " at " + pass.renderPassEvent + "[" + pass.renderPassQueueIndex + "]");
                     if (pass.renderPassEvent >= eventStart && pass.renderPassEvent < eventEnd)
                         pass.RecordRenderGraph(renderGraph, m_frameData);
                 }

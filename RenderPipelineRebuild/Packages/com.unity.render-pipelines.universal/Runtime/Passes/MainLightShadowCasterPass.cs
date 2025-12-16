@@ -489,7 +489,7 @@ namespace UnityEngine.Rendering.Universal.Internal
 
                 if (shadowTexture.IsValid())
                     builder.SetGlobalTextureAfterPass(shadowTexture, m_MainLightShadowmapID);
-
+                
                 builder.SetRenderFunc((PassData data, RasterGraphContext context) =>
                 {
                     if (!data.emptyShadowmap)

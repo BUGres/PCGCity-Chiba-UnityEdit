@@ -136,7 +136,7 @@ Shader "Hidden/Universal Render Pipeline/LutBuilderLdr"
                 float b = EvaluateCurve(_CurveBlue, c.b);
                 colorLinear = float3(r, g, b);
             }
-
+            
             return half4(saturate(colorLinear), 1.0);
         }
 

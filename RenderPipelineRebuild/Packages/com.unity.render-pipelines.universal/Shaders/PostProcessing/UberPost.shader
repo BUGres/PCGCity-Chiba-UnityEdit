@@ -144,7 +144,7 @@ Shader "Hidden/Universal Render Pipeline/UberPost"
 
             return uv;
         }
-
+        
         half4 FragUberPost(Varyings input) : SV_Target
         {
             UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
@@ -154,7 +154,12 @@ Shader "Hidden/Universal Render Pipeline/UberPost"
 
             // NOTE: Hlsl specifies missing input.a to fill 1 (0 for .rgb).
             // InputColor is a "bottom" layer for alpha output.
-            half4 inputColor = SAMPLE_TEXTURE2D_X(_BlitTexture, sampler_LinearClamp, ClampUVForBilinear(SCREEN_COORD_REMOVE_SCALEBIAS(uvDistorted), _BlitTexture_TexelSize.xy));
+            // half4 inputColor = SAMPLE_TEXTURE2D_X(_BlitTexture,
+            //     sampler_LinearClamp,
+            //     ClampUVForBilinear(SCREEN_COORD_REMOVE_SCALEBIAS(uvDistorted), _BlitTexture_TexelSize.xy));
+
+            half4 inputColor = SAMPLE_TEXTURE2D(_BlitTexture, sampler_LinearClamp, input.texcoord);
+            
             half3 color = inputColor.rgb;
 
             #if _CHROMATIC_ABERRATION
