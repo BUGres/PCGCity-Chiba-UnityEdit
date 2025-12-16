@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoJson2Blender", "GeoJson2Blender.csproj", "{E920DE36-EC03-45B5-A6E7-B1BDB3922135}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E920DE36-EC03-45B5-A6E7-B1BDB3922135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E920DE36-EC03-45B5-A6E7-B1BDB3922135}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E920DE36-EC03-45B5-A6E7-B1BDB3922135}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E920DE36-EC03-45B5-A6E7-B1BDB3922135}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A126DE0-7E98-4401-9BEB-920EAD1DC84A}
+	EndGlobalSection
+EndGlobal

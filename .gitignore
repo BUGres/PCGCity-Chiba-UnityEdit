@@ -6,7 +6,6 @@ RenderPipelineRebuild/Assembly-CSharp.csproj
 /RenderPipelineRebuild/obj
 RenderPipelineRebuild/RenderPipelineRebuild.sln
 /RenderPipelineRebuild/Temp
-*.csproj
 /RenderPipelineRebuild/UserSettings
 /GeoJson2CScript/.vs
 /GeoJson2CScript/bin
@@ -18,3 +17,6 @@ RenderPipelineRebuild/RenderPipelineRebuild.sln
 PCGTown/PCGTown.sln
 PCGTown/PCGTown.sln.DotSettings.user
 /PCGTown/UserSettings
+/GeoJson2Blender/.vs
+/GeoJson2Blender/bin
+/GeoJson2Blender/obj
