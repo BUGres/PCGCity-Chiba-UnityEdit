@@ -20,3 +20,6 @@ PCGTown/PCGTown.sln.DotSettings.user
 /GeoJson2Blender/.vs
 /GeoJson2Blender/bin
 /GeoJson2Blender/obj
+/PSLine/Library
+/PSLine/Logs
+/PSLine/Temp

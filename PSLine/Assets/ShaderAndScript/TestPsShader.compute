@@ -1,0 +1,41 @@
+#pragma kernel CSMain
+
+Texture2D Input;
+RWTexture2D<float4> Result;
+
+Texture2D Pen;
+Texture2D Noise;
+
+
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    int PenR = 16;
+    int NoiseR = 256;
+
+    int2 uv = int2(id.x % NoiseR, id.y % NoiseR);
+    float4 ret = float4(0, 0, 0, 0);
+    
+    for (int x = -PenR / 2 + 1;x <= PenR / 2 - 1;x += 1)
+    {
+        for (int y = -PenR / 2 + 1;y <= PenR / 2 - 1;y += 1)
+        {
+            float r = Input[id.xy + int2(x, y)].x;
+            if (r != 0)
+            {
+                int tmpPenR = (int)((float)PenR * r);
+                int2 tmpuv = int2(x + tmpPenR / 2, y + tmpPenR / 2);
+                float subColor = Pen[tmpuv].a;
+                ret += float4(subColor, subColor, subColor, 0);
+            }
+        }
+    }
+
+    float weight = ret.x + ret.y + ret.z;
+    float noise = weight * Noise[uv].x;
+    float4 result = float4(1, 1, 1, 1) - pow(ret * noise, 0.25);
+    // result.w = 1 - result.x;
+    result.w = 1;
+    Result[id.xy] = result;
+}
