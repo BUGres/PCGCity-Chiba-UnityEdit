@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.Rendering;
 
 public class editor_mesh : Editor
 {
@@ -253,18 +254,22 @@ public class editor_mesh : Editor
         // mr.materials = smr.materials;
     }
 
-    [MenuItem("GameObject/<MeshFilter>四边面维护数据")]
-    public static void QuadMeshDealWith()
-    {
-        var mf = Selection.activeGameObject.GetComponent<MeshFilter>();
-        var m = mf.mesh;
-        for (int i = 0; i < 10; i++)
-        {
-            Debug.LogError(m.vertices[i].x);
-        }
-        // Debug.Log("顶点总数" + mf.mesh.vertexCount + "三角总数" + mf.mesh.triangles.Length);
-        // Debug.Log("源文件顶点总数" + mf.sharedMesh.vertexCount + "源文件三角总数" + mf.sharedMesh.triangles.Length);
-        // Debug.Log(m.getvertex);
-        // Debug.Log(m.normals.Length);
-    }
+    // [MenuItem("GameObject/<MeshFilter>四边面维护数据")]
+    // public static void QuadMeshDealWith()
+    // {
+    //     var mf = Selection.activeGameObject.GetComponent<MeshFilter>();
+    //     var m = mf.mesh;
+    //     for (int i = 0; i < 10; i++)
+    //     {
+    //         Debug.LogError(m.vertices[i].x);
+    //     }
+    //     int[] indices = new int[] { 0, 1, 2, 3, 4, 5, 6 };
+    //     m.SetIndices(indices, MeshTopology.Quads, 0);
+    //     // m.SetIndexBufferParams(1, IndexFormat.);
+    //     
+    //     // Debug.Log("顶点总数" + mf.mesh.vertexCount + "三角总数" + mf.mesh.triangles.Length);
+    //     // Debug.Log("源文件顶点总数" + mf.sharedMesh.vertexCount + "源文件三角总数" + mf.sharedMesh.triangles.Length);
+    //     // Debug.Log(m.getvertex);
+    //     // Debug.Log(m.normals.Length);
+    // }
 }
