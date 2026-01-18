@@ -49,10 +49,13 @@
     <Compile Include="Assets\ShaderAndScript\AutoRotate.cs" />
     <Compile Include="Assets\ShaderAndScript\QuadMeshSupport.cs" />
     <Compile Include="Assets\ShaderAndScript\TestPsRender.cs" />
+    <Compile Include="Assets\ShaderAndScript\BBCMeshRenderPlugin.cs" />
+    <None Include="Assets\ShaderAndScript\ShadowTexture.shader" />
     <None Include="Assets\ShaderAndScript\LineRender.shader" />
     <None Include="Assets\ShaderAndScript\TestPsShader.compute" />
     <None Include="Assets\ShaderAndScript\CombineResult.shader" />
     <None Include="Assets\ShaderAndScript\LineRenderII.shader" />
+    <None Include="Assets\ShaderAndScript\ShadowColor.shader" />
     <Reference Include="UnityEngine">
       <HintPath>D:\Unity6\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

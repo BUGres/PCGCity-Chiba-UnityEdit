@@ -11,19 +11,21 @@ Texture2D Noise;
 [numthreads(8,8,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
-    int PenR = 16;
+    int PenR = 8;
     int NoiseR = 256;
-
-    int2 uv = int2(id.x % NoiseR, id.y % NoiseR);
+    
     float4 ret = float4(0, 0, 0, 0);
     
     for (int x = -PenR / 2 + 1;x <= PenR / 2 - 1;x += 1)
     {
         for (int y = -PenR / 2 + 1;y <= PenR / 2 - 1;y += 1)
         {
+            // 在卷积中Loop
+            // r：当前卷积的像素颜色
             float r = Input[id.xy + int2(x, y)].x;
             if (r != 0)
             {
+                // tmpPenR:按照当前卷积像素作为半径，以实现圆弧线条中由深到浅
                 int tmpPenR = (int)((float)PenR * r);
                 int2 tmpuv = int2(x + tmpPenR / 2, y + tmpPenR / 2);
                 float subColor = Pen[tmpuv].a;
@@ -33,8 +35,9 @@ void CSMain (uint3 id : SV_DispatchThreadID)
     }
 
     float weight = ret.x + ret.y + ret.z;
+    int2 uv = int2(id.x % NoiseR, id.y % NoiseR);
     float noise = weight * Noise[uv].x;
-    float4 result = float4(1, 1, 1, 1) - pow(ret * noise, 0.25);
+    float4 result = float4(1, 1, 1, 1) -  pow(ret, 0.125) * lerp(1, noise, 0.75f);
     // result.w = 1 - result.x;
     result.w = 1;
     Result[id.xy] = result;

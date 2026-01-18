@@ -46,6 +46,7 @@
     <Analyzer Include="D:\Unity6\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ShaderAndScript\Editor\editor_capture.cs" />
     <Compile Include="Assets\ShaderAndScript\Editor\editor_mesh.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:\Unity6\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
